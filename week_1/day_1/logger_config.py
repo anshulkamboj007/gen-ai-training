@@ -2,7 +2,7 @@ import logging
 from datetime import datetime
 import os
 
-def get_logger(name,log_dir='logs/'):
+def get_logger(name,log_dir='./week_1/day_1/logs/'):
     os.makedirs(log_dir,exist_ok=True)
     log_file=os.path.join(log_dir,f"{name}_{datetime.now():%Y%m%d_%H%M%S}.log")
 

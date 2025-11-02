@@ -1,4 +1,4 @@
-data_path:'./week_1/day_1/Salary_dataset.csv'
+data_path: './week_1/day_1/Salary_dataset.csv'
 test_size: 0.2
 random_state: 42
 model:
