@@ -3,6 +3,8 @@ from sklearn.metrics import r2_score
 from mlflow.models.signature import infer_signature
 import mlflow
 import os
+import joblib
+
 
 def train_model(X_train, y_train, X_test, y_test):
     with mlflow.start_run():
@@ -21,7 +23,8 @@ def train_model(X_train, y_train, X_test, y_test):
         os.makedirs(log_dir, exist_ok=True)
 
         log_path = os.path.join(log_dir, "train.log")
-
+        os.makedirs("./week_1/day_1/model", exist_ok=True)
+        joblib.dump(model, "./week_1/day_1/model/model.pkl")
         # Create or append to the train.log file
         if not os.path.exists(log_path):
             with open(log_path, "w") as f:
